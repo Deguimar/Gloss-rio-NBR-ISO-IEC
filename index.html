@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossário de Segurança da Informação</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    .container {
+        width: 80%;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    h2 {
+        color: #0056b3;
+        border-bottom: 2px solid #0056b3;
+        padding-bottom: 5px;
+    }
+
+    .section {
+        margin-bottom: 20px;
+    }
+
+    .section h2 {
+        margin-top: 0;
+    }
+
+    .section p {
+        margin: 5px 0;
+        color: #666;
+    }
+
+    .search-bar, .filter-bar {
+        margin-bottom: 20px;
+    }
+
+    .search-bar input, .filter-bar select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .filter-bar select {
+        width: 40%;
+    }
+
+    .category {
+        margin-top: 20px;
+    }
+
+    .category h2 {
+        color: #0056b3;
+        border-bottom: 2px solid #0056b3;
+        padding-bottom: 5px;
+    }
+
+    .term {
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #e1e1e1;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+
+    .term h3 {
+        margin: 0;
+        color: #333;
+    }
+
+    .term p {
+        margin: 5px 0 0;
+        color: #666;
+    }
+
+    #alphabeticalOrder {
+        background-color: #4CAF50; 
+        color: #fff; 
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    #alphabeticalOrder:hover {
+        background-color: #3e8e41; 
+    }
+
+    #alphabeticalOrder:active {
+        background-color: #3e8e41; 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+
+        <div class="section">
+            <h2>O que é a NBR ISO/IEC 17799?</h2>
+            <p>A NBR ISO/IEC 17799 (atualmente substituída pela ISO/IEC 27001 e ISO/IEC 27002) é um guia de boas práticas para o gerenciamento da segurança da informação. A norma é um conjunto de práticas recomendadas para a implementação, manutenção e melhoria contínua de um Sistema de Gestão de Segurança da Informação (SGSI). Originalmente, ela se baseou no padrão britânico BS 7799 e foi adotada internacionalmente pela International Organization for Standardization (ISO) e pela International Electrotechnical Commission (IEC).</p>
+            <p>Ela fornece um framework para implementar um Sistema de Gerenciamento de Segurança da Informação (SGSI) eficaz, com diretrizes para proteger os ativos de informação de uma organização. O principal objetivo da norma é ajudar organizações a protegerem suas informações, assegurando a confidencialidade, integridade e disponibilidade das informações. Isso inclui proteger informações contra diversos tipos de ameaças, seja elas internas ou externas, deliberadas ou acidentais. A NBR ISO/IEC 17799 foi posteriormente substituída e atualizada pela ISO/IEC 27002, que mantém o propósito de fornecer diretrizes para boas práticas em segurança da informação, alinhando-se melhor com a ISO/IEC 27001, que especifica os requisitos para um SGSI. Essas atualizações têm como objetivo garantir que as normas reflitam as mudanças no cenário de ameaças e nas práticas de gestão de segurança da informação.</p>
+        </div>
+
+        <div class="section">
+            <h2>Por que a segurança da informação é crucial?</h2>
+            <p>Em resumo, a segurança da informação é fundamental para proteger os ativos digitais de uma organização, garantir a continuidade das operações, cumprir com as obrigações legais e regulamentares, e manter a confiança dos stakeholders.</p>
+        </div>
+
+        <div class="section">
+            <h2>Objetivo de um Glossário na Segurança da Informação</h2>
+            <p>Um glossário na segurança da informação desempenha um papel crucial na padronização de terminologias, facilitando a comunicação, educação e treinamento, garantindo conformidade e auditoria, e ajudando na gestão de conhecimento. Seu alcance deve ser abrangente, cobrindo termos técnicos, políticas, normas, gestão de riscos, tecnologias, e aspectos humanos e organizacionais, proporcionando um recurso completo e útil para todos os envolvidos na segurança da informação.</p>
+        </div>
+
+        <h1>Glossário de Segurança da Informação</h1>
+
+        <div class="search-bar">
+            <input type="text" id="searchInput" onkeyup="searchTerms()" placeholder="Pesquisar termos...">
+        </div>
+
+        <div class="filter-bar">
+            <select id="categoryFilter" onchange="filterCategories()">
+                <option value="all">Todas as Categorias</option>
+                <option value="conceitos-gerais">Conceitos Gerais</option>
+                <option value="gestao-e-controle">Gestão e Controle</option>
+                <option value="incidentes-e-conformidade">Incidentes e Conformidade</option>
+                <option value="treinamento-e-conscientizacao">Treinamento e Conscientização</option>
+            </select>
+            <button id="alphabeticalOrder" onclick="sortAlphabetical()">Ordenar Alfabeticamente</button>
+        </div>
+
+        <div class="category" id="conceitos-gerais">
+            <h2>Conceitos Gerais</h2>
+            <div class="term">
+                <h3>Confidencialidade</h3>
+                <p>Garantia de que a informação é acessível somente por pessoas autorizadas.</p>
+            </div>
+            <div class="term">
+                <h3>Disponibilidade</h3>
+                <p>Garantia de que os usuários autorizados obtenham acesso à informação sempre que necessário.</p>
+            </div>
+            <div class="term">
+                <h3>Gestão de Riscos</h3>
+                <p>Processo de identificar, avaliar e controlar riscos potenciais que podem afetar a segurança da informação.</p>
+            </div>
+            <div class="term">
+                <h3>Integridade</h3>
+                <p>Salvaguarda da exatidão e completeza da informação.</p>
+            </div>
+            <div class="term">
+                <h3>Política de Segurança da Informação</h3>
+                <p>Documento que define as diretrizes e regras para a proteção da informação.</p>
+            </div>
+
+            <div class="term">
+                <h3>Auditoria de Segurança da Informação</h3>
+                <p>É um processo sistemático de avaliação das políticas, procedimentos e infraestrutura de TI de uma empresa.</p>
+            </div>
+            <div class="term">
+                <h3>Ativos de informação</h3>
+                <p>Dados, sistemas, infraestrutura e softwares que possuem valor para a organização.</p>
+            </div>
+            <div class="term">
+                <h3>Ameaça</h3>
+                <p>Causa potencial de um incidente indesejado, que pode resultar em dano para um sistema ou organização.</p>
+            </div>
+            <div class="term">
+                <h3>Vulnerabilidade</h3>
+                <p>Fragilidade de um ativo ou controle que pode ser explorada por uma ameaça.</p>
+            </div>
+            <div class="term">
+                <h3>Backup</h3>
+                <p>Cópia de dados ou sistemas para fins de recuperação.</p>
+            </div>   
+            <div class="term">
+                <h3>Impacto</h3>
+                <p>Consequência de um incidente de segurança da informação, expresso em termos de efeitos negativos.</p>
+            </div>
+            <div class="term">
+                <h3>Incidente de Segurança</h3>
+                <p>Evento que compromete a confidencialidade, integridade ou disponibilidade da informação.</p>
+            </div>
+            <div class="term">
+                <h3>Avaliação de Riscos</h3>
+                <p>Processo de identificar e analisar riscos para determinar a sua magnitude.</p>
+            </div>
+            <div class="term">
+                <h3>Monitoramento Contínuo</h3>
+                <p>Supervisão contínua da segurança da informação para detectar e responder a ameaças.</p>
+            </div>
+            <div class="term">
+                <h3>Normas de Segurança da Informação</h3>
+                <p>Conjunto de diretrizes e práticas recomendadas para a proteção da informação.</p>
+            </div>
+        </div>
+
+        <div class="category" id="gestao-e-controle">
+            <h2>Gestão e Controle</h2>
+            <div class="term">
+                <h3>Classificação da Informação</h3>
+                <p>Processo de categorizar a informação com base em seu valor, sensibilidade e criticidade.</p>
+            </div>
+            <div class="term">
+                <h3>Controle de Acesso</h3>
+                <p>Medidas para garantir que o acesso à informação e aos sistemas seja autorizado e restrito.</p>
+            </div>
+            <div class="term">
+                <h3>Criptografia</h3>
+                <p>Uso de técnicas para proteger a informação durante o armazenamento ou a transmissão.</p>
+            </div>
+            <div class="term">
+                <h3>Gestão de Vulnerabilidades</h3>
+                <p>Processo de identificar, avaliar e tratar vulnerabilidades no sistema de informação.</p>
+            </div>
+            <div class="term">
+                <h3>Segurança Física</h3>
+                <p>Medidas para proteger os ativos de informação contra ameaças físicas e ambientais.</p>
+            </div>
+            <div class="term">
+                <h3>Segurança Lógica</h3>
+                <p>Proteção de sistemas de informação e redes por meio de softwares e regras de restrições de acesso.</p>
+            </div>
+            <div class="term">
+                <h3>Gestão de Acessos</h3>
+                <p>Processo de gerenciar quem tem acesso aos recursos de informação e sob quais condições.</p>
+            </div>
+            <div class="term">
+                <h3>Autenticação</h3>
+                <p>Verificação da identidade de um usuário, processo ou dispositivo.</p>
+            </div>
+            <div class="term">
+                <h3>Autorização</h3>
+                <p>Permissão para acessar recursos ou realizar ações específicas.</p>
+            </div>
+            <div class="term">
+                <h3>Registro de Atividades</h3>
+                <p>Registro das atividades dos usuários e sistemas para fins de auditoria e monitoramento.</p>
+            </div>
+            <div class="term">
+                <h3>Segregação de Funções</h3>
+                <p>Prática de dividir tarefas e privilégios entre diferentes pessoas para reduzir riscos.</p>
+            </div>
+            <div class="term">
+                <h3>Plano de Recuperação de Desastres</h3>
+                <p>Plano para restaurar sistemas e operações após um evento catastrófico.</p>
+            </div>
+            <div class="term">
+                <h3>Controles Preventivos</h3>
+                <p>Medidas para evitar que ameaças comprometam a segurança da informação.</p>
+            </div>
+            <div class="term">
+                <h3>Controles Detectivos</h3>
+                <p>Medidas para identificar quando uma ameaça comprometeu a segurança da informação.</p>
+            </div>
+        </div>
+
+
+        <div class="category" id="gestao-e-controle">
+            <h2>Gestão e Controle</h2>
+            <div class="term">
+                <h3>Classificação da Informação</h3>
+                <p>Processo de categorizar a informação com base em seu valor, sensibilidade e criticidade.</p>
+            </div>
+            <div class="term">
+                <h3>Controle de Acesso</h3>
+                <p>Medidas para garantir que o acesso à informação e aos sistemas seja autorizado e restrito.</p>
+            </div>
+            <div class="term">
+                <h3>Criptografia</h3>
+                <p>Uso de técnicas para proteger a informação durante o armazenamento ou a transmissão.</p>
+            </div>
+            <div class="term">
+                <h3>Gestão de Vulnerabilidades</h3>
+                <p>Processo de identificar, avaliar e tratar vulnerabilidades no sistema de informação.</p>
+            </div>
+            <div class="term">
+                <h3>Segurança Física</h3>
+                <p>Medidas para proteger os ativos de informação contra ameaças físicas e ambientais.</p>
+            </div>
+            <div class="term">
+                <h3>Segurança Lógica</h3>
+                <p>Proteção de sistemas de informação e redes por meio de softwares e regras de restrições de acesso.</p>
+            </div>
+            <div class="term">
+                <h3>Gestão de Acessos</h3>
+                <p>Processo de gerenciar quem tem acesso aos recursos de informação e sob quais condições.</p>
+            </div>
+            <div class="term">
+                <h3>Autenticação</h3>
+                <p>Verificação da identidade de um usuário, processo ou dispositivo.</p>
+            </div>
+            <div class="term">
+                <h3>Autorização</h3>
+                <p>Permissão para acessar recursos ou realizar ações específicas.</p>
+            </div>
+            <div class="term">
+                <h3>Registro de Atividades</h3>
+                <p>Registro das atividades dos usuários e sistemas para fins de auditoria e monitoramento.</p>
+            </div>
+            <div class="term">
+                <h3>Segregação de Funções</h3>
+                <p>Prática de dividir tarefas e privilégios entre diferentes pessoas para reduzir riscos.</p>
+            </div>
+            <div class="term">
+                <h3>Plano de Recuperação de Desastres</h3>
+                <p>Plano para restaurar sistemas e operações após um evento catastrófico.</p>
+            </div>
+            <div class="term">
+                <h3>Controles Preventivos</h3>
+                <p>Medidas para evitar que ameaças comprometam a segurança da informação.</p>
+            </div>
+            <div class="term">
+                <h3>Controles Detectivos</h3>
+                <p>Medidas para identificar quando uma ameaça comprometeu a segurança da informação.</p>
+            </div>
+        </div>
+
+        <div class="category" id="incidentes-e-conformidade">
+            <h2>Incidentes e Conformidade</h2>
+            <div class="term">
+                <h3>Monitoramento e Análise de Logs</h3>
+                <p>Revisão de registros de atividades do sistema para detectar eventos de segurança.</p>
+            </div>
+            <div class="term">
+                <h3>Plano de Continuidade de Negócios (BCP)</h3>
+                <p>Planos para garantir que as operações críticas possam continuar após um incidente.</p>
+            </div>
+            <div class="term">
+                <h3>Resposta a Incidentes</h3>
+                <p>Ações para mitigar e resolver incidentes de segurança.</p>
+            </div>
+            <div class="term">
+                <h3>Teste de Penetração</h3>
+                <p>Avaliação da segurança do sistema por meio de simulação de ataques.</p>
+            </div>
+            <div class="term">
+                <h3>Relato de Incidentes</h3>
+                <p>Processo de informar eventos de segurança às autoridades competentes.</p>
+            </div>
+            <div class="term">
+                <h3>Análise Pós-Incidente</h3>
+                <p>Revisão e análise detalhada de um incidente para prevenir recorrências.</p>
+            </div>
+            <div class="term">
+                <h3>Gestão de Continuidade de Negócios</h3>
+                <p>Processo para garantir que operações críticas continuem durante e após um incidente.</p>
+            </div>
+            <div class="term">
+                <h3>Auditoria de Conformidade</h3>
+                <p>Verificação de que a organização está aderente às normas e regulamentos.</p>
+            </div>
+            <div class="term">
+                <h3>Investigação de Incidentes</h3>
+                <p>Processo de descobrir as causas e os impactos de um incidente de segurança.</p>
+            </div>
+            <div class="term">
+                <h3>Controles de Conformidade</h3>
+                <p>Medidas para garantir que as políticas e procedimentos de segurança sejam seguidos.</p>
+            </div>
+            <div class="term">
+                <h3>Ameaça Interna</h3>
+                <p>Risco de segurança que origina-se dentro da organização.</p>
+            </div>
+            <div class="term">
+                <h3>Ameaça Externa</h3>
+                <p>Risco de segurança que origina-se fora da organização.</p>
+            </div>
+            <div class="term">
+                <h3>Plano de Resposta a Incidentes</h3>
+                <p>Procedimentos estabelecidos para responder a incidentes de segurança.</p>
+            </div>
+        </div>
+
+        <div class="category" id="treinamento-e-conscientizacao">
+            <h2>Treinamento e Conscientização</h2>
+            <div class="term">
+                <h3>Capacitação em Segurança</h3>
+                <p>Formação técnica específica para melhorar as habilidades em segurança da informação.</p>
+            </div>
+            <div class="term">
+                <h3>Políticas de Uso Aceitável</h3>
+                <p>Diretrizes para o uso adequado dos sistemas de informação da organização.</p>
+            </div>
+            <div class="term">
+                <h3>Simulações de Incidentes</h3>
+                <p>Exercícios práticos para preparar a resposta a incidentes de segurança.</p>
+            </div>
+            <div class="term">
+                <h3>Treinamento e Conscientização</h3>
+                <p>Programas para educar os funcionários sobre a importância da segurança da informação.</p>
+            </div>
+            <div class="term">
+                <h3>Programas de Conscientização</h3>
+                <p>Iniciativas para promover a cultura de segurança da informação na organização.</p>
+            </div>
+            <div class="term">
+                <h3>Teste de Phishing</h3>
+                <p>Simulações de ataques de phishing para educar e testar a resistência dos funcionários.</p>
+            </div>
+            <div class="term">
+                <h3>Campanhas de Conscientização</h3>
+                <p>Iniciativas para promover práticas seguras e comportamentos corretos entre os funcionários.</p>
+            </div>
+            <div class="term">
+                <h3>Políticas de Senhas</h3>
+                <p>Regras sobre a criação, uso e gestão de senhas para garantir a segurança da informação.</p>
+            </div>
+            <div class="term">
+                <h3>Treinamento em Resposta a Incidentes</h3>
+                <p>Capacitação para preparar a equipe a responder eficazmente a incidentes de segurança.</p>
+            </div>
+            <div class="term">
+                <h3>Revisão de Políticas</h3>
+                <p>Análise regular das políticas de segurança para garantir que estejam atualizadas e eficazes.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function searchTerms() {
+            var input, filter, categories, terms, term, i, j, txtValue;
+            input = document.getElementById('searchInput');
+            filter = input.value.toLowerCase();
+            categories = document.getElementsByClassName('category');
+
+            for (i = 0; i < categories.length; i++) {
+                terms = categories[i].getElementsByClassName('term');
+                for (j = 0; j < terms.length; j++) {
+                    term = terms[j];
+                    txtValue = term.textContent || term.innerText;
+                    if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                        term.style.display = '';
+                    } else {
+                        term.style.display = 'none';
+                    }
+                }
+            }
+        }
+
+        function filterCategories() {
+            var select, filter, categories, i;
+            select = document.getElementById('categoryFilter');
+            filter = select.value;
+            categories = document.getElementsByClassName('category');
+
+            for (i = 0; i < categories.length; i++) {
+                if (filter === 'all') {
+                    categories[i].style.display = '';
+                } else {
+                    if (categories[i].id === filter) {
+                        categories[i].style.display = '';
+                    } else {
+                        categories[i].style.display = 'none';
+                    }
+                }
+            }
+        }
+
+        function sortAlphabetical() {
+            var categories, terms, termsArr, category, i, j;
+            categories = document.getElementsByClassName('category');
+
+            for (i = 0; i < categories.length; i++) {
+                category = categories[i];
+                terms = category.getElementsByClassName('term');
+                termsArr = Array.prototype.slice.call(terms);
+
+                termsArr.sort(function(a, b) {
+                    var termA = a.getElementsByTagName('h3')[0].innerText.toLowerCase();
+                    var termB = b.getElementsByTagName('h3')[0].innerText.toLowerCase();
+                    if (termA < termB) return -1;
+                    if (termA > termB) return 1;
+                    return 0;
+                });
+
+                for (j = 0; j < termsArr.length; j++) {
+                    category.appendChild(termsArr[j]);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
